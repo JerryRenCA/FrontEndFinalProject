@@ -1,8 +1,8 @@
-const { Sequelize, DataTypes, Model } = require("sequelize");
+const {DataTypes, Model } = require("sequelize");
 
 class BusRoute extends Model {}
 
-BusRoute.model_init = (sequelize) =>
+BusRoute.modelInit = (sequelize) =>{
   BusRoute.init(
     {
       route_id: {
@@ -29,6 +29,7 @@ BusRoute.model_init = (sequelize) =>
       },
       route_color: {
         type: DataTypes.STRING,
+        defaultValue:"000000"
       },
       route_text_color: {
         type: DataTypes.STRING,
@@ -36,8 +37,7 @@ BusRoute.model_init = (sequelize) =>
     },
     {
       sequelize,
-      modelName: "BusRoute",
     }
-  );
+  )};
 
 module.exports = { BusRoute };

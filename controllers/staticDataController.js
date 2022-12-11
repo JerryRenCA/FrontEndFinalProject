@@ -1,4 +1,4 @@
-const {getFileData}=require('./dbController')
+const {getFileData}=require('./fileController')
 
 const handleLoadCSVFile = (req, res) => {
   const fileID = req.params.fileId;

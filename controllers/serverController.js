@@ -1,6 +1,6 @@
 const { sequelize } = require("./initModels");
 
-const startServer = async () => {
+const startServer = async (app) => {
   try {
     await sequelize.authenticate();
     console.log("Connect to sqlite database in directory:/database");

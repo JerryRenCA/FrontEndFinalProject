@@ -43,5 +43,7 @@ BusStop.modelInit = (sequelize) =>
         type: DataTypes.STRING,
       },
     },
-    { sequelize, modelName: "BusStop" }
+    { sequelize,}
   );
+
+  module.exports={BusStop}

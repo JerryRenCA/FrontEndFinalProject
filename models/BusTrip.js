@@ -7,7 +7,7 @@ BusTrip.modelInit = (sequelize) => {
     {
       route_id: {
         type: DataTypes.NUMBER,
-        primaryKey: true,
+        // primaryKey: true,
       },
       service_id: {
         type: DataTypes.NUMBER,
@@ -39,7 +39,9 @@ BusTrip.modelInit = (sequelize) => {
     },
     {
       sequelize,
-      modelName: "BusTrip",
     }
   );
 };
+
+
+module.exports={BusTrip}
