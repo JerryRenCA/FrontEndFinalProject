@@ -27,7 +27,7 @@ const loadDataFromFileToDB = async () => {
         try {
           await aBusStopTime.save();
         } catch (err) {
-          console.error(err);
+          // console.error(err);
         }
       });
     }

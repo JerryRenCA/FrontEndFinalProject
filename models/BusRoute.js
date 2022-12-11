@@ -7,7 +7,7 @@ BusRoute.modelInit = (sequelize) =>{
     {
       route_id: {
         type: DataTypes.NUMBER,
-        primaryKey: true,
+        // primaryKey: true,
       },
       agency_id: {
         type: DataTypes.NUMBER,

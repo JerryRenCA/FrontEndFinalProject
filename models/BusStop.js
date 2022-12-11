@@ -7,7 +7,6 @@ BusStop.modelInit = (sequelize) =>
     {
       stop_id: {
         type: DataTypes.NUMBER,
-        PrimaryKey: true,
       },
       stop_code: {
         type: DataTypes.NUMBER,

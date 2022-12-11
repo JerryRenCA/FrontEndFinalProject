@@ -8,7 +8,6 @@ BusTransitShape.modelInit = (sequelize) =>{
     {
       shape_id: {
         type: DataTypes.NUMBER,
-        primaryKey: true,
       },
       shape_pt_lat: {
         type: DataTypes.NUMBER,

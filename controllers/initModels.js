@@ -20,9 +20,9 @@ const initTables=async () => {
   BusTrip.modelInit(sequelize)
   BusTransitShape.modelInit(sequelize)
 
-  await sequelize.sync({ force: false });
+  await sequelize.sync({ force: true });
 }
 
 
 
-module.exports = { sequelize,initTables, BusRoute,BusStopTime,BusStop,BusTrip};
+module.exports = { sequelize,initTables, BusRoute,BusStopTime,BusStop,BusTrip,BusTransitShape};
