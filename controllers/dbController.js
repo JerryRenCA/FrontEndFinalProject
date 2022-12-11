@@ -1,11 +1,8 @@
-const { Sequelize } = require("sequelize");
+
 const path = require("path");
 let csvToJson = require("convert-csv-to-json");
 
-const sequelize = new Sequelize({
-    dialect: "sqlite",
-    storage: path.join(__dirname,'..' ,"database", "halifaxbus.sqlite"),
-  });
+
 
 const getFileData = (fileID) => {
   const fileDir = path.join(__dirname, "..", "StaticData", "");
@@ -25,4 +22,6 @@ const getFileData = (fileID) => {
   }
 };
 
-module.exports={sequelize,getFileData}
+
+
+module.exports={getFileData}

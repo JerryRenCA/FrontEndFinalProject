@@ -1,4 +1,4 @@
-const { sequelize } = require("./dbController");
+const { sequelize } = require("./initModels");
 
 const startServer = async () => {
   try {
