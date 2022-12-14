@@ -1,4 +1,4 @@
-const { sequelize } = require("./initModels");
+const { sequelize, initTables} = require("./initModels");
 
 const startServer = async (app) => {
   try {
@@ -7,6 +7,7 @@ const startServer = async (app) => {
     app.listen(process.env.PORT, () =>
       console.log(`Server is listening on PORT:${process.env.PORT}`)
     );
+    initTables();
   } catch (error) {
     console.error("Unable to connect to the database", error);
     console.error("Server fail to start.");

@@ -16,3 +16,4 @@ app.use('/staticData',staticDataRouter)
 
 startServer(app);
 
+loadDataFromFileToDB()

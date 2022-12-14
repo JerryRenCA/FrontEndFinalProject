@@ -1,0 +1,31 @@
+Commands for MongoDB
+
+1> mongosh
+
+2> show dbs
+
+3> use mytest
+
+4> show collections
+
+5> db.myCollection.find()
+
+6> db.myCollection.insertMany([{id:10,x:9},{id:11,x:-1}])
+
+7> db.myCollection.find()
+
+8> db.myCollection.find({id:10})
+
+9> db.myCollection.find({x:{$gt:5}})
+
+10> db.myCollection.updateOne({id:5},{$set:{x:-2}})
+
+11> db.myCollection.find()
+
+12>  db.myCollection.updateOne({id:5},{$set:{x:-2}})
+
+13>  db.myCollection.find()
+
+14>  db.myCollection.deleteMany({x:-2})
+
+15>  db.myCollection.find()

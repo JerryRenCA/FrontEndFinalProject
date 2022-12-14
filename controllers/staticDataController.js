@@ -1,13 +1,17 @@
-const {getFileData}=require('./fileController')
+const { BusRoute } = require("../models/BusRoute")
+const { BusStopTime } = require("../models/BusStopTime")
+const { BusStop } = require("../models/BusStop")
+const { BusTrip } = require("../models/BusTrip")
+const { BusTransitShape } = require("../models/BusTransitShape")
 
-const handleLoadCSVFile = (req, res) => {
-  const fileID = req.params.fileId;
-  //   return res.send(fileID)
+// const fileNames = ["routes.txt","shapes.txt","stop_times.txt","stops.txt","trips.txt",];
+const BusModels=[BusRoute,BusTransitShape,BusStopTime,BusStop,BusTrip];
+const modelSelectId=["route_Id","shape_Id","stop_Id","stop_Id","route_Id"]
 
-  const data = getFileData(fileID);
-  res.json(data);
-};
+const handleGetRouteList=async (req,res)=>{
+  const rzlt=await BusRoute.findAll({attributes:['route_Id']})
+  console.dir(rzlt)
+  res.json(JSON.stringify(rzlt))
+}
 
-const handlePutAllDataToDB = (req, res) => {};
-
-module.exports = { handleLoadCSVFile };
+module.exports = {handleGetRouteList  };
