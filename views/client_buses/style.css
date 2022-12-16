@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Satisfy&family=Ubuntu+Condensed&display=swap");
-.font-playfair{
-    font-family: 'Playfair Display', serif;
+.font-playfair {
+  font-family: "Playfair Display", serif;
 }
 
-.font-satisfy{
-    font-family: 'Satisfy', cursive;
+.font-satisfy {
+  font-family: "Satisfy", cursive;
 }
 
-.font-ubuntu-con{
-    font-family: 'Ubuntu Condensed', sans-serif;
+.font-ubuntu-con {
+  font-family: "Ubuntu Condensed", sans-serif;
 }
 
 header {
@@ -19,8 +19,7 @@ header {
   justify-content: center;
   align-items: center;
   /* border-bottom: 1px solid black; */
-  box-shadow: inset 1px 0px 5px 5px  indianred;
-
+  box-shadow: inset 1px 0px 5px 5px indianred;
 }
 header h1 {
   color: brown;
@@ -31,7 +30,7 @@ header h1 {
 header h2 {
   color: white;
   margin-left: 10rem;
-  font-size: 1.0rem;
+  font-size: 1rem;
 }
 header h1:hover {
   color: white;
@@ -46,4 +45,91 @@ main {
 }
 aside {
   background-color: white;
+}
+
+.place {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+#head-sign-lable{
+  display: block;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  color: brown;
+}
+
+#select-trip{
+  display: flex;
+  flex-direction:column;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  color: brown;
+}
+#select-trip select{
+  font-size: 1.5rem;
+  text-align: center;
+}
+#main-section{
+  position: relative;
+}
+#timer-30s{
+  cursor: pointer;
+  z-index: 99;
+  position: absolute;
+  background-color: rgba(80, 80, 200, 0.4);
+  right: 0;
+  margin: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: brown;
+  font-weight: bolder;
+}
+
+.has-active-trip{
+  font-weight: bold;
+  color: darkgray;
+}
+
+.no-active-trip{
+  color: lightgray;
+}
+
+.tabs-e {
+  margin-top: -45px !important;
+  position: absolute;
+  color: red;
+}
+
+.customPopup{
+
+  opacity: 0.5;
+  background-color: lightskyblue;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+}
+.customPopup li a{
+  color: red;
+  font-weight: bolder;
+}
+.customPopup label:first-child{
+  display: inline-block;
+  width: 5rem;
+  padding: 0.3rem;
+  font-weight: bold;
+}
+.customPopup label:last-child{
+  display: inline-block;
+  width: 6rem;
+  padding: 0.3rem;
+  vertical-align:middle;
+  color: red;
 }

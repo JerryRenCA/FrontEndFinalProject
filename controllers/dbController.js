@@ -54,4 +54,6 @@ const loadDataFromFileToDB = async () => {
   await loopTables(4, BusTrip);
 };
 
+
+
 module.exports = { loadDataFromFileToDB };

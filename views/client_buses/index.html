@@ -7,32 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12.0.0/dist/css/tabby-ui.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12.0.0/dist/js/tabby.polyfills.min.js"></script>
+  
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/tomik23/autocomplete@1.8.6/dist/css/autocomplete.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/tomik23/autocomplete@1.8.6/dist/js/autocomplete.min.js"></script>
+    <link
+      rel="stylesheet"
       href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="leaflet-rotatedmarker.js"></script>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body style="margin: 0px">
     <header>
-        <h1>Halifax Bus Tracker</h1>
-        <h2 class="font-satisfy">@ Designed by Jerry in NSCC, 2022</h2>
+      <h1>Halifax Bus Tracker</h1>
+      <h2 class="font-satisfy">@ Designed by Jerry in NSCC, 2022</h2>
     </header>
     <main>
       <aside>
-        <form action="#">
-          <div class="flield">
-            <label for="route-ID">Route ID</label>
-            <input type="text" name="route-ID">
-            <button type="submit">Go</button>
-          </div>
-        </form>
         <section>
-          
+          <div id="select-trip-head-sign">
+            <label id="head-sign-lable" for="Head-Sign">Select Route</label>
+            <div class="auto-search-wrapper loupe">
+              <input
+                id="input-head-sign"
+                autocomplete="off"
+                placeholder="enter the letter"
+                type="text"
+                name="Head-Sign"
+              />
+            </div>
+          </div>
+          <div id="select-trip">
+            <label> Select A Trip</label>
+            <select id="trip-id" name="trip-id-select">
+
+            </select>
+          </div>
         </section>
+        <section></section>
       </aside>
-      <section>
+      <section id="main-section">
         <div
           id="map-wrapper"
           style="width: 100%; height: 100%; position: fixed"
@@ -42,6 +65,7 @@
             style="width: 100%; height: 100%; position: relative"
           ></div>
         </div>
+        <div id="timer-30s"><span id="timer-tooltip">Bus will refresh in </span><span>30s</span></div>
       </section>
     </main>
     <script src="main.js"></script>
