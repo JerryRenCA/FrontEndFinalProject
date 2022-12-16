@@ -46,7 +46,12 @@ main {
 aside {
   background-color: white;
 }
-
+#input-head-sign{
+  font-family: "Ubuntu Condensed", sans-serif;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
 .place {
   display: flex;
   justify-content: space-between;
@@ -60,6 +65,8 @@ aside {
   font-size: 1.5rem;
   margin-top: 0.5rem;
   color: brown;
+  font-family: "Playfair Display", serif;
+  text-shadow: 1px 1px 2px skyblue;
 }
 
 #select-trip{
@@ -68,10 +75,16 @@ aside {
   font-size: 1.5rem;
   margin-top: 0.5rem;
   color: brown;
+  font-family: "Playfair Display", serif;
+  text-shadow: 1px 1px 2px skyblue;
 }
 #select-trip select{
+  margin-top: 0.3rem;
+  margin-bottom: 0.1rem;
   font-size: 1.5rem;
   text-align: center;
+  font-family: "Ubuntu Condensed", sans-serif;
+  height: 2.5rem;
 }
 #main-section{
   position: relative;
@@ -119,6 +132,11 @@ aside {
 .customPopup li a{
   color: red;
   font-weight: bolder;
+
+}
+.customPopup li{
+background-color: antiquewhite;
+opacity: 1;
 }
 .customPopup label:first-child{
   display: inline-block;

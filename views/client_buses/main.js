@@ -61,8 +61,9 @@ const funny = L.icon({
 const busLocation = []; //the bus selected by active trip, here store its location list
 let lastTripSelected = -1;
 const runningBusMarkerArr = [];
-let vehicleInfo={};
-const customPopup = (vehicleInfo)=>{ return`
+let vehicleInfo = {};
+const customPopup = (vehicleInfo) => {
+  return `
 <div class="customPopup">
     <ul class="tabs-e" data-tabs>
       <li><a data-tabby-default href="#static-data">Static Data</a></li>
@@ -92,7 +93,8 @@ const customPopup = (vehicleInfo)=>{ return`
         <label>${vehicleInfo.vehicle.position.longitude}</label>
       </div>
     </div>
-</div>`}
+</div>`;
+};
 
 // specify popup options
 const customOptions = {
@@ -111,7 +113,7 @@ const renderMap = function (dataFiltered) {
   lastTripSelected = tripSelected;
   const { latitude, longitude } = dataFiltered[0].vehicle.position;
   // console.dir(dataFiltered[0])
-  vehicleInfo=dataFiltered[0]
+  vehicleInfo = dataFiltered[0];
   timerCount++;
   if (oldLat != latitude) {
     busLocation.push([latitude, longitude]);
@@ -121,7 +123,9 @@ const renderMap = function (dataFiltered) {
     map.addLayer(aMarker);
     map.setView(aMarker.getLatLng(), zoom);
     runningBusMarkerArr.push(aMarker);
-    aMarker.bindPopup(customPopup(vehicleInfo), customOptions).on("click", runTabs);
+    aMarker
+      .bindPopup(customPopup(vehicleInfo), customOptions)
+      .on("click", runTabs);
     function runTabs() {
       const tabs = new Tabby("[data-tabs]");
     }
@@ -138,8 +142,12 @@ function adjustMarker(aMarker) {
   const arrLen = busLocation.length;
   const P1 = busLocation[arrLen - 1];
   const P2 = busLocation[arrLen - 2];
-  const angle = (Math.atan((P1[1] - P2[1]) / (P1[0] - P2[0])) / Math.PI) * 180;
-  console.log("angle:", angle);
+  let angle = (Math.atan((P1[1] - P2[1]) / (P1[0] - P2[0])) / Math.PI) * 180;
+  console.log("bf angle:", angle);
+  if (angle < 0) if (P1[1] - P2[1] > 0) angle = angle - 180;
+  if (angle > 0) if (P1[1] - P2[1] < 0) angle = angle - 180;
+  console.log("bh angle:", angle);
+
   const add180 = P1[1] - P2[1] > 0 ? 0 : 0;
   if (angle) aMarker.options.rotationAngle = angle + add180;
   aMarker.update();
@@ -298,7 +306,7 @@ const execSelectedTripID = async (tripId) => {
   tripSelected = tripId;
   step();
   setInterval(step, 7000);
-  setTimerVisibility('visible')
+  setTimerVisibility("visible");
   // console.log("tripId", tripId);
 };
 
